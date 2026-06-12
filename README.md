@@ -1,2 +1,5 @@
-# portfolio
-A responsive portfolio website showcasing my projects, technical skills, and experience in software development.
+# Portfolio Website
+
+This repository contains my personal portfolio website showcasing my projects, skills, and experience.
+
+© 2026 John Sathya Arava
