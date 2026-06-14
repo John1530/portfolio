@@ -53,7 +53,7 @@
     <div class="hero-content">
       <p class="hero-intro">Hi, my name is</p>
       <h1 class="hero-name">John S. Arava.</h1>
-      <h2 class="hero-tagline">Aerospace engineer who builds the web.</h2>
+      <h2 class="hero-tagline">Web Developer & Aerospace Engineer.</h2>
       <p class="hero-desc">
         I'm a 24-year-old engineer from Hyderabad, India — with a background in Aeronautical
         and Mechatronics Engineering, and a passion for building clean, functional websites.
@@ -264,20 +264,49 @@
         </div>
         <a href="mailto:jsarava2001@yahoo.com" class="btn btn-outline">Say Hello →</a>
       </div>
-      <div class="contact-right">
-        <div class="contact-form-label">Send a message</div>
+      <form action="https://formspree.io/f/xnjylozp" method="POST">
+
+        <input
+          type="hidden"
+          name="_next"
+          value="https://john1530.github.io/portfolio/"
+        />
+
         <div class="form-group">
-          <input type="text" id="name" placeholder="Your name" class="form-input" />
+          <input
+            type="text"
+            name="name"
+            placeholder="Your name"
+            class="form-input"
+            required
+          />
         </div>
+
         <div class="form-group">
-          <input type="email" id="email" placeholder="Your email" class="form-input" />
+          <input
+            type="email"
+            name="email"
+            placeholder="Your email"
+            class="form-input"
+            required
+          />
         </div>
+
         <div class="form-group">
-          <textarea id="message" placeholder="Your message" class="form-input" rows="4"></textarea>
+          <textarea
+            name="message"
+            placeholder="Your message"
+            class="form-input"
+            rows="4"
+            required
+          ></textarea>
         </div>
-        <button class="btn btn-outline" id="send-btn" onclick="sendMessage()">Send message</button>
-        <p id="form-feedback" class="form-feedback"></p>
-      </div>
+
+        <button type="submit" class="btn btn-outline">
+          Send Message
+        </button>
+
+      </form>
     </div>
   </section>
 
