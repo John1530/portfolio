@@ -4,321 +4,343 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="John S. Arava — Aerospace Engineer & Web Developer based in Hyderabad, India.">
-  <author content="John S. Arava" />
+  <meta name="author" content="John S. Arava">
   <title>John S. Arava — Engineer & Developer</title>
   <link rel="stylesheet" href="styles/portfolio-style.css">
   <link rel="icon" href="images/favicon.png" type="image/png">
 </head>
 <body>
+  <canvas id="bg-canvas" aria-hidden="true"></canvas>
 
-  <canvas id="bg-canvas"></canvas>
+  <header>
+    <nav id="navbar" aria-label="Primary navigation">
+      <a href="#home" class="nav-logo" aria-label="John S. Arava home">
+        <svg width="150" height="44" viewBox="0 0 160 50" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="logo-title">
+          <title id="logo-title">John S. Arava logo</title>
+          <g transform="translate(6, 9) scale(1.05)">
+            <polygon points="28,8 0,14 0,18 28,24 34,16" fill="rgba(56,189,248,0.12)" stroke="#38bdf8" stroke-width="1.2"/>
+            <polygon points="14,8 4,0 0,0 6,8" fill="none" stroke="#38bdf8" stroke-width="1"/>
+            <polygon points="14,24 4,32 0,32 6,24" fill="none" stroke="#38bdf8" stroke-width="1"/>
+            <polygon points="4,13 0,11 0,21 4,19" fill="none" stroke="#38bdf8" stroke-width="0.8"/>
+          </g>
+          <text x="52" y="18" font-family="'Courier New',monospace" font-size="13" font-weight="700" fill="var(--text)">John S.</text>
+          <text x="52" y="32" font-family="'Courier New',monospace" font-size="13" font-weight="700" fill="var(--accent)">Arava</text>
+          <line x1="52" y1="37" x2="148" y2="37" stroke="var(--accent)" stroke-width="0.5" opacity="0.4"/>
+          <text x="52" y="45" font-family="'Courier New',monospace" font-size="6.5" fill="var(--text3)" letter-spacing="1.5">AEROSPACE · WEB</text>
+        </svg>
+      </a>
 
-  <!-- NAV -->
-  <nav id="navbar">
-    <a href="#home" class="nav-logo">
-      <svg width="150" height="44" viewBox="0 0 160 50" xmlns="http://www.w3.org/2000/svg" aria-label="John S. Arava logo">
-        <g transform="translate(6, 9) scale(1.05)">
-          <polygon points="28,8 0,14 0,18 28,24 34,16" fill="rgba(56,189,248,0.12)" stroke="#38bdf8" stroke-width="1.2"/>
-          <polygon points="14,8 4,0 0,0 6,8" fill="none" stroke="#38bdf8" stroke-width="1"/>
-          <polygon points="14,24 4,32 0,32 6,24" fill="none" stroke="#38bdf8" stroke-width="1"/>
-          <polygon points="4,13 0,11 0,21 4,19" fill="none" stroke="#38bdf8" stroke-width="0.8"/>
-        </g>
-        <text x="52" y="18" font-family="'Courier New',monospace" font-size="13" font-weight="700" fill="var(--text)">John S.</text>
-        <text x="52" y="32" font-family="'Courier New',monospace" font-size="13" font-weight="700" fill="var(--accent)">Arava</text>
-        <line x1="52" y1="37" x2="148" y2="37" stroke="var(--accent)" stroke-width="0.5" opacity="0.4"/>
-        <text x="52" y="45" font-family="'Courier New',monospace" font-size="6.5" fill="var(--text3)" letter-spacing="1.5">AEROSPACE · WEB</text>
-      </svg>
-    </a>
-    <div class="nav-links">
-      <a href="#about">01. About</a>
-      <a href="#skills">02. Skills</a>
-      <a href="#projects">03. Projects</a>
-      <a href="#contact">04. Contact</a>
-      <a href="https://github.com/John1530" target="_blank" rel="noopener" class="nav-github">GitHub</a>
-    </div>
-    <button class="hamburger" id="hamburger" aria-label="Toggle menu">&#9776;</button>
-  </nav>
-
-  <!-- MOBILE MENU -->
-  <div class="mobile-menu" id="mobileMenu">
-    <a href="#about" onclick="closeMenu()">01. About</a>
-    <a href="#skills" onclick="closeMenu()">02. Skills</a>
-    <a href="#projects" onclick="closeMenu()">03. Projects</a>
-    <a href="#contact" onclick="closeMenu()">04. Contact</a>
-    <a href="https://github.com/John1530" target="_blank" rel="noopener">GitHub ↗</a>
-  </div>
-
-  <!-- HERO -->
-  <section class="hero" id="home">
-    <div class="hero-content">
-      <p class="hero-intro">Hi, my name is</p>
-      <h1 class="hero-name">John S. Arava.</h1>
-      <h2 class="hero-tagline">Web Developer & Aerospace Engineer.</h2>
-      <p class="hero-desc">
-        I'm a 24-year-old engineer from Hyderabad, India — with a background in Aeronautical
-        and Mechatronics Engineering, and a passion for building clean, functional websites.
-        Currently preparing for my Master's in Aerospace Engineering.
-      </p>
-      <div class="hero-btns">
-        <a href="#projects" class="btn btn-outline">View my work →</a>
-        <a href="#contact" class="btn btn-ghost">Get in touch</a>
+      <div class="nav-links" role="list" aria-label="Section links">
+        <a href="#about" role="listitem">01. About</a>
+        <a href="#skills" role="listitem">02. Skills</a>
+        <a href="#projects" role="listitem">03. Projects</a>
+        <a href="#contact" role="listitem">04. Contact</a>
+        <a href="https://github.com/John1530" target="_blank" rel="noopener" class="nav-github" role="listitem" aria-label="Visit John S. Arava on GitHub">GitHub</a>
       </div>
-    </div>
-  </section>
 
-  <!-- ABOUT -->
-  <section id="about" class="section">
-    <div class="section-heading">
-      <span class="section-num">01.</span>
-      <span class="section-title">About Me</span>
-      <div class="section-line"></div>
-    </div>
-    <div class="about-grid">
-      <div class="about-text">
-        <p>
-          Hey there! I'm <strong>John</strong> — an engineer from Hyderabad, India 🇮🇳.
-          My journey started with a <strong>Diploma in Aeronautical Engineering</strong> (2017–2020),
-          followed by a <strong>Bachelor's in Mechatronics Engineering</strong> (2020–2023).
-          I'm now preparing to take on a <strong>Master's in Aerospace Engineering</strong> —
-          a field I'm deeply passionate about.
+      <button class="hamburger" id="hamburger" type="button" aria-label="Toggle navigation menu" aria-controls="mobileMenu" aria-expanded="false">&#9776;</button>
+    </nav>
+
+    <nav class="mobile-menu" id="mobileMenu" aria-label="Mobile navigation">
+      <a href="#about" onclick="closeMenu()">01. About</a>
+      <a href="#skills" onclick="closeMenu()">02. Skills</a>
+      <a href="#projects" onclick="closeMenu()">03. Projects</a>
+      <a href="#contact" onclick="closeMenu()">04. Contact</a>
+      <a href="https://github.com/John1530" target="_blank" rel="noopener" aria-label="Visit John S. Arava on GitHub">GitHub ↗</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero" id="home" aria-labelledby="hero-title">
+      <div class="hero-content">
+        <p class="hero-intro">Hi, my name is</p>
+        <h1 class="hero-name" id="hero-title">John S. Arava.</h1>
+        <p class="hero-tagline">Web Developer & Aerospace Engineer.</p>
+        <p class="hero-desc">
+          I'm a 24-year-old engineer from Hyderabad, India — with a background in Aeronautical
+          and Mechatronics Engineering, and a passion for building clean, functional websites.
+          Currently preparing for my Master's in Aerospace Engineering.
         </p>
-        <br>
-        <p>
-          Alongside engineering, I've self-taught web development — picking up HTML, CSS,
-          JavaScript, Python, and C#. I love building practical, clean solutions that solve
-          real problems. I'm currently available for <strong>freelance web projects</strong>,
-          especially for businesses, researchers, or educators in the science and engineering space.
-        </p>
-        <br>
-        <ul class="about-details">
-          <li>📍 Hyderabad, India</li>
-          <li>✉️ jsarava2001@yahoo.com</li>
-          <li>🎓 MSc Aerospace Engineering (upcoming)</li>
-        </ul>
-      </div>
-      <div class="about-right">
-        <div class="about-photo-wrap">
-          <img src="images/johnarava.jpg" alt="John S. Arava" class="about-photo" />
+        <div class="hero-btns">
+          <a href="#projects" class="btn btn-outline">View my work →</a>
+          <a href="#contact" class="btn btn-ghost">Get in touch</a>
         </div>
-        <div class="about-education">
-          <div class="edu-card">
-            <div class="edu-badge">Upcoming</div>
-            <div class="edu-degree">Master's in Aerospace Engineering</div>
-            <div class="edu-school">To be announced</div>
+      </div>
+    </section>
+
+    <section id="about" class="section" aria-labelledby="about-title">
+      <div class="section-heading">
+        <span class="section-num" aria-hidden="true">01.</span>
+        <h2 class="section-title" id="about-title">About Me</h2>
+        <div class="section-line" aria-hidden="true"></div>
+      </div>
+
+      <div class="about-grid">
+        <section class="about-text" aria-label="About John S. Arava">
+          <p>
+            Hey there! I'm <strong>John</strong> — an engineer from Hyderabad, India 🇮🇳.
+            My journey started with a <strong>Diploma in Aeronautical Engineering</strong> (2017–2020),
+            followed by a <strong>Bachelor's in Mechatronics Engineering</strong> (2020–2023).
+            I'm now preparing to take on a <strong>Master's in Aerospace Engineering</strong> —
+            a field I'm deeply passionate about.
+          </p>
+          <p>
+            Alongside engineering, I've self-taught web development — picking up HTML, CSS,
+            JavaScript, Python, and C#. I love building practical, clean solutions that solve
+            real problems. I'm currently available for <strong>freelance web projects</strong>,
+            especially for businesses, researchers, or educators in the science and engineering space.
+          </p>
+          <ul class="about-details" aria-label="Personal details">
+            <li>📍 Hyderabad, India</li>
+            <li>✉️ <a href="mailto:jsarava2001@yahoo.com">jsarava2001@yahoo.com</a></li>
+            <li>🎓 MSc Aerospace Engineering (upcoming)</li>
+          </ul>
+        </section>
+
+        <aside class="about-right" aria-label="Photo and education">
+          <figure class="about-photo-wrap">
+            <img src="images/johnarava.jpg" alt="Portrait of John S. Arava" class="about-photo">
+          </figure>
+
+          <section class="about-education" aria-label="Education timeline">
+            <article class="edu-card">
+              <p class="edu-badge">Upcoming</p>
+              <h3 class="edu-degree">Master's in Aerospace Engineering</h3>
+              <p class="edu-school">To be announced</p>
+            </article>
+
+            <article class="edu-card">
+              <p class="edu-badge">2020 – 2023</p>
+              <h3 class="edu-degree">Bachelor's in Mechatronics Engineering</h3>
+              <p class="edu-school">India</p>
+            </article>
+
+            <article class="edu-card">
+              <p class="edu-badge">2017 – 2020</p>
+              <h3 class="edu-degree">Diploma in Aeronautical Engineering</h3>
+              <p class="edu-school">India</p>
+            </article>
+          </section>
+        </aside>
+      </div>
+    </section>
+
+    <section id="skills" class="section" aria-labelledby="skills-title">
+      <div class="section-heading">
+        <span class="section-num" aria-hidden="true">02.</span>
+        <h2 class="section-title" id="skills-title">Skills</h2>
+        <div class="section-line" aria-hidden="true"></div>
+      </div>
+
+      <div class="skills-container">
+        <section class="skills-group" aria-labelledby="web-development-title">
+          <h3 class="skills-group-title" id="web-development-title">Web Development</h3>
+          <div class="skill-bar-item">
+            <div class="skill-bar-label"><span>HTML</span><span>85%</span></div>
+            <div class="skill-bar-track" role="progressbar" aria-label="HTML skill level" aria-valuemin="0" aria-valuemax="100" aria-valuenow="85">
+              <div class="skill-bar-fill" data-width="85"></div>
+            </div>
           </div>
-          <div class="edu-card">
-            <div class="edu-badge">2020 – 2023</div>
-            <div class="edu-degree">Bachelor's in Mechatronics Engineering</div>
-            <div class="edu-school">India</div>
+          <div class="skill-bar-item">
+            <div class="skill-bar-label"><span>CSS</span><span>80%</span></div>
+            <div class="skill-bar-track" role="progressbar" aria-label="CSS skill level" aria-valuemin="0" aria-valuemax="100" aria-valuenow="80">
+              <div class="skill-bar-fill" data-width="80"></div>
+            </div>
           </div>
-          <div class="edu-card">
-            <div class="edu-badge">2017 – 2020</div>
-            <div class="edu-degree">Diploma in Aeronautical Engineering</div>
-            <div class="edu-school">India</div>
+          <div class="skill-bar-item">
+            <div class="skill-bar-label"><span>JavaScript</span><span>70%</span></div>
+            <div class="skill-bar-track" role="progressbar" aria-label="JavaScript skill level" aria-valuemin="0" aria-valuemax="100" aria-valuenow="70">
+              <div class="skill-bar-fill" data-width="70"></div>
+            </div>
           </div>
-        </div>
-      </div>
-    </div>
-  </section>
+        </section>
 
-  <!-- SKILLS -->
-  <section id="skills" class="section">
-    <div class="section-heading">
-      <span class="section-num">02.</span>
-      <span class="section-title">Skills</span>
-      <div class="section-line"></div>
-    </div>
-    <div class="skills-container">
-      <div class="skills-group">
-        <div class="skills-group-title">Web Development</div>
-        <div class="skill-bar-item">
-          <div class="skill-bar-label"><span>HTML</span><span>85%</span></div>
-          <div class="skill-bar-track"><div class="skill-bar-fill" data-width="85"></div></div>
-        </div>
-        <div class="skill-bar-item">
-          <div class="skill-bar-label"><span>CSS</span><span>80%</span></div>
-          <div class="skill-bar-track"><div class="skill-bar-fill" data-width="80"></div></div>
-        </div>
-        <div class="skill-bar-item">
-          <div class="skill-bar-label"><span>JavaScript</span><span>70%</span></div>
-          <div class="skill-bar-track"><div class="skill-bar-fill" data-width="70"></div></div>
-        </div>
-      </div>
-      <div class="skills-group">
-        <div class="skills-group-title">Programming</div>
-        <div class="skill-bar-item">
-          <div class="skill-bar-label"><span>Python</span><span>75%</span></div>
-          <div class="skill-bar-track"><div class="skill-bar-fill" data-width="75"></div></div>
-        </div>
-        <div class="skill-bar-item">
-          <div class="skill-bar-label"><span>C#</span><span>70%</span></div>
-          <div class="skill-bar-track"><div class="skill-bar-fill" data-width="70"></div></div>
-        </div>
-      </div>
-      <div class="skills-group">
-        <div class="skills-group-title">Tools & Other</div>
-        <div class="skills-chips">
-          <span class="chip">Git</span>
-          <span class="chip">GitHub</span>
-          <span class="chip">Responsive Design</span>
-          <span class="chip">Aerospace Engineering</span>
-          <span class="chip">Mechatronics</span>
-          <span class="chip">Aeronautics</span>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- PROJECTS -->
-  <section id="projects" class="section">
-    <div class="section-heading">
-      <span class="section-num">03.</span>
-      <span class="section-title">Projects</span>
-      <div class="section-line"></div>
-    </div>
-    <p class="section-sub">A selection of things I've built — view all on <a href="https://github.com/John1530" target="_blank" rel="noopener">GitHub</a>.</p>
-    <div class="projects-grid">
-
-      <div class="project-card featured">
-        <div class="project-top">
-          <span class="project-folder">✈️</span>
-          <div class="project-links">
-            <a href="https://john1530.github.io/wdd131/project/index.html" target="_blank" rel="noopener" title="Live site">↗</a>
+        <section class="skills-group" aria-labelledby="programming-title">
+          <h3 class="skills-group-title" id="programming-title">Programming</h3>
+          <div class="skill-bar-item">
+            <div class="skill-bar-label"><span>Python</span><span>75%</span></div>
+            <div class="skill-bar-track" role="progressbar" aria-label="Python skill level" aria-valuemin="0" aria-valuemax="100" aria-valuenow="75">
+              <div class="skill-bar-fill" data-width="75"></div>
+            </div>
           </div>
-        </div>
-        <div class="project-name">Aerodynamics Hub</div>
-        <div class="project-desc">A multi-page educational website about the science of flight, aircraft technology, and aerodynamic forces. Features a dynamic Aircraft of the Day section. Built as an academic project.</div>
-        <div class="project-tags">
-          <span>HTML</span><span>CSS</span><span>JavaScript</span>
-        </div>
-      </div>
-
-      <div class="project-card">
-        <div class="project-top">
-          <span class="project-folder">📓</span>
-          <div class="project-links">
-            <a href="https://github.com/John1530/cse210-projects/tree/main/week02/Journal" target="_blank" rel="noopener" title="GitHub">⌥</a>
+          <div class="skill-bar-item">
+            <div class="skill-bar-label"><span>C#</span><span>70%</span></div>
+            <div class="skill-bar-track" role="progressbar" aria-label="C sharp skill level" aria-valuemin="0" aria-valuemax="100" aria-valuenow="70">
+              <div class="skill-bar-fill" data-width="70"></div>
+            </div>
           </div>
-        </div>
-        <div class="project-name">Journal App</div>
-        <div class="project-desc">A C# console journal with random writing prompts, mood tracking, and JSON file save/load. Exceeded requirements with mood tracking and JSON storage.</div>
-        <div class="project-tags">
-          <span>C#</span><span>.NET</span>
-        </div>
-      </div>
+        </section>
 
-      <div class="project-card">
-        <div class="project-top">
-          <span class="project-folder">🧘</span>
-          <div class="project-links">
-            <a href="https://github.com/John1530/cse210-projects/tree/main/week05/Mindfulness" target="_blank" rel="noopener" title="GitHub">⌥</a>
+        <section class="skills-group" aria-labelledby="tools-title">
+          <h3 class="skills-group-title" id="tools-title">Tools & Other</h3>
+          <div class="skills-chips" role="list" aria-label="Tools and engineering skills">
+            <span class="chip" role="listitem">Git</span>
+            <span class="chip" role="listitem">GitHub</span>
+            <span class="chip" role="listitem">Responsive Design</span>
+            <span class="chip" role="listitem">Aerospace Engineering</span>
+            <span class="chip" role="listitem">Mechatronics</span>
+            <span class="chip" role="listitem">Aeronautics</span>
           </div>
-        </div>
-        <div class="project-name">Mindfulness App</div>
-        <div class="project-desc">A wellness console app with breathing, reflection, listing, and a custom gratitude activity. Tracks statistics and logs sessions to a file.</div>
-        <div class="project-tags">
-          <span>C#</span><span>.NET</span>
-        </div>
+        </section>
+      </div>
+    </section>
+
+    <section id="projects" class="section" aria-labelledby="projects-title">
+      <div class="section-heading">
+        <span class="section-num" aria-hidden="true">03.</span>
+        <h2 class="section-title" id="projects-title">Projects</h2>
+        <div class="section-line" aria-hidden="true"></div>
       </div>
 
-      <div class="project-card">
-        <div class="project-top">
-          <span class="project-folder">🏆</span>
-          <div class="project-links">
-            <a href="https://github.com/John1530/cse210-projects/tree/main/week06/EternalQuest" target="_blank" rel="noopener" title="GitHub">⌥</a>
+      <p class="section-sub">A selection of things I've built — view all on <a href="https://github.com/John1530" target="_blank" rel="noopener">GitHub</a>.</p>
+
+      <div class="projects-grid">
+        <article class="project-card featured">
+          <div class="project-top">
+            <span class="project-folder" aria-hidden="true">✈️</span>
+            <div class="project-links">
+              <a href="https://john1530.github.io/wdd131/project/index.html" target="_blank" rel="noopener" title="Live site" aria-label="View live Aerodynamics Hub site">↗</a>
+            </div>
           </div>
-        </div>
-        <div class="project-name">Eternal Quest</div>
-        <div class="project-desc">A gamified goal tracker with a points and levelling system. Three goal types — simple, eternal, and checklist — with player titles from Beginner to Goal Master.</div>
-        <div class="project-tags">
-          <span>C#</span><span>.NET</span>
-        </div>
+          <h3 class="project-name">Aerodynamics Hub</h3>
+          <p class="project-desc">A multi-page educational website about the science of flight, aircraft technology, and aerodynamic forces. Features a dynamic Aircraft of the Day section. Built as an academic project.</p>
+          <div class="project-tags" role="list" aria-label="Technologies used">
+            <span role="listitem">HTML</span><span role="listitem">CSS</span><span role="listitem">JavaScript</span>
+          </div>
+        </article>
+
+        <article class="project-card">
+          <div class="project-top">
+            <span class="project-folder" aria-hidden="true">📓</span>
+            <div class="project-links">
+              <a href="https://github.com/John1530/cse210-projects/tree/main/week02/Journal" target="_blank" rel="noopener" title="GitHub" aria-label="View Journal App source code on GitHub">⌥</a>
+            </div>
+          </div>
+          <h3 class="project-name">Journal App</h3>
+          <p class="project-desc">A C# console journal with random writing prompts, mood tracking, and JSON file save/load. Exceeded requirements with mood tracking and JSON storage.</p>
+          <div class="project-tags" role="list" aria-label="Technologies used">
+            <span role="listitem">C#</span><span role="listitem">.NET</span>
+          </div>
+        </article>
+
+        <article class="project-card">
+          <div class="project-top">
+            <span class="project-folder" aria-hidden="true">🧘</span>
+            <div class="project-links">
+              <a href="https://github.com/John1530/cse210-projects/tree/main/week05/Mindfulness" target="_blank" rel="noopener" title="GitHub" aria-label="View Mindfulness App source code on GitHub">⌥</a>
+            </div>
+          </div>
+          <h3 class="project-name">Mindfulness App</h3>
+          <p class="project-desc">A wellness console app with breathing, reflection, listing, and a custom gratitude activity. Tracks statistics and logs sessions to a file.</p>
+          <div class="project-tags" role="list" aria-label="Technologies used">
+            <span role="listitem">C#</span><span role="listitem">.NET</span>
+          </div>
+        </article>
+
+        <article class="project-card">
+          <div class="project-top">
+            <span class="project-folder" aria-hidden="true">🏆</span>
+            <div class="project-links">
+              <a href="https://github.com/John1530/cse210-projects/tree/main/week06/EternalQuest" target="_blank" rel="noopener" title="GitHub" aria-label="View Eternal Quest source code on GitHub">⌥</a>
+            </div>
+          </div>
+          <h3 class="project-name">Eternal Quest</h3>
+          <p class="project-desc">A gamified goal tracker with a points and levelling system. Three goal types — simple, eternal, and checklist — with player titles from Beginner to Goal Master.</p>
+          <div class="project-tags" role="list" aria-label="Technologies used">
+            <span role="listitem">C#</span><span role="listitem">.NET</span>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section id="contact" class="section contact-section" aria-labelledby="contact-title">
+      <div class="section-heading">
+        <span class="section-num" aria-hidden="true">04.</span>
+        <h2 class="section-title" id="contact-title">Get In Touch</h2>
+        <div class="section-line" aria-hidden="true"></div>
       </div>
 
-    </div>
-  </section>
+      <div class="contact-wrapper">
+        <section class="contact-left" aria-label="Contact information">
+          <p class="contact-desc">
+            I'm always open to discussing new projects, freelance opportunities, or just a good
+            conversation about engineering and tech. My inbox is open!
+          </p>
 
-  <!-- CONTACT -->
-  <section id="contact" class="section contact-section">
-    <div class="section-heading">
-      <span class="section-num">04.</span>
-      <span class="section-title">Get In Touch</span>
-      <div class="section-line"></div>
-    </div>
-    <div class="contact-wrapper">
-      <div class="contact-left">
-        <p class="contact-desc">
-          I'm always open to discussing new projects, freelance opportunities, or just a good
-          conversation about engineering and tech. My inbox is open!
-        </p>
-        <div class="contact-links">
-          <a href="mailto:jsarava2001@yahoo.com" class="contact-link">
-            <span>✉️</span> Email
-          </a>
-          <a href="https://github.com/John1530" target="_blank" rel="noopener" class="contact-link">
-            <span>💻</span> Github
-          </a>
-          <a href="https://linkedin.com/in/john-sathya-arava-4390892a7" target="_blank" rel="noopener" class="contact-link">
-            <span>🔗</span> LinkedIn
-          </a>
-        </div>
-        <a href="mailto:jsarava2001@yahoo.com" class="btn btn-outline">Say Hello →</a>
+          <address class="contact-links" style="font-style: normal;">
+            <a href="mailto:jsarava2001@yahoo.com" class="contact-link">
+              <span aria-hidden="true">✉️</span> Email
+            </a>
+            <a href="https://github.com/John1530" target="_blank" rel="noopener" class="contact-link">
+              <span aria-hidden="true">💻</span> Github
+            </a>
+            <a href="https://linkedin.com/in/john-sathya-arava-4390892a7" target="_blank" rel="noopener" class="contact-link">
+              <span aria-hidden="true">🔗</span> LinkedIn
+            </a>
+          </address>
+
+          <a href="mailto:jsarava2001@yahoo.com" class="btn btn-outline">Say Hello →</a>
+        </section>
+
+        <form action="https://formspree.io/f/xnjylozp" method="POST" aria-label="Contact form">
+          <input type="hidden" name="_next" value="https://john1530.github.io/portfolio/">
+
+          <div class="form-group">
+            <input
+              type="text"
+              id="name"
+              name="name"
+              placeholder="Your name"
+              class="form-input"
+              autocomplete="name"
+              aria-label="Your name"
+              required
+            >
+          </div>
+
+          <div class="form-group">
+            <input
+              type="email"
+              id="email"
+              name="email"
+              placeholder="Your email"
+              class="form-input"
+              autocomplete="email"
+              aria-label="Your email"
+              required
+            >
+          </div>
+
+          <div class="form-group">
+            <textarea
+              id="message"
+              name="message"
+              placeholder="Your message"
+              class="form-input"
+              rows="4"
+              aria-label="Your message"
+              required
+            ></textarea>
+          </div>
+
+          <button type="submit" class="btn btn-outline" id="send-btn">
+            Send Message
+          </button>
+
+          <p class="form-feedback" id="form-feedback" role="status" aria-live="polite"></p>
+        </form>
       </div>
-      <form action="https://formspree.io/f/xnjylozp" method="POST">
+    </section>
+  </main>
 
-        <input
-          type="hidden"
-          name="_next"
-          value="https://john1530.github.io/portfolio/"
-        >
-
-        <div class="form-group">
-          <input
-            type="text"
-            name="name"
-            placeholder="Your name"
-            class="form-input"
-            required
-          />
-        </div>
-
-        <div class="form-group">
-          <input
-            type="email"
-            name="email"
-            placeholder="Your email"
-            class="form-input"
-            required
-          />
-        </div>
-
-        <div class="form-group">
-          <textarea
-            name="message"
-            placeholder="Your message"
-            class="form-input"
-            rows="4"
-            required
-          ></textarea>
-        </div>
-
-        <button type="submit" class="btn btn-outline">
-          Send Message
-        </button>
-
-      </form>
-    </div>
-  </section>
-
-  <!-- FOOTER -->
   <footer>
     <p>Designed & Built by <strong>John S. Arava</strong></p>
     <p class="footer-sub">Made with ❤️ in Hyderabad · © <span id="year"></span></p>
-    <div class="footer-links">
+    <nav class="footer-links" aria-label="Footer links">
       <a href="https://github.com/John1530" target="_blank" rel="noopener">GitHub</a>
       <a href="https://linkedin.com/in/john-sathya-arava-4390892a7" target="_blank" rel="noopener">LinkedIn</a>
       <a href="mailto:jsarava2001@yahoo.com">Email</a>
-    </div>
+    </nav>
   </footer>
 
   <script src="scripts/portfolio-script.js"></script>
